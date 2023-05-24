@@ -13,7 +13,9 @@ body {
     padding: 20px;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     margin: 0;
 }
 
@@ -22,7 +24,7 @@ a {
     color: #333;
 }
 
-/* Styles du header */
+/* Début du header */
 header {
     position: fixed;
     top: 0;
@@ -49,6 +51,7 @@ nav ul li {
 nav ul li a {
     color: #fff;
 }
+
 .dropdown-menu {
     display: none;
     position: absolute;
@@ -70,6 +73,8 @@ nav ul li a {
     margin-bottom: 0;
 }
 
+/* Fin du header */
+
 
 /* Styles du contenu principal */
 main {
@@ -82,7 +87,8 @@ h2 {
     margin-bottom: 20px;
 }
 
-#featured-robes, #categories {
+#featured-robes,
+#categories {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
@@ -90,17 +96,20 @@ h2 {
     margin-bottom: 40px;
 }
 
-.robe-card, .category {
+.robe-card,
+.category {
     background-color: #fff;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
-    height: 400px; /* Ajoutez cette ligne pour définir la hauteur fixe */
+    height: 400px;
+    /* Ajoutez cette ligne pour définir la hauteur fixe */
 }
 
 
-.robe-card img, .category img {
+.robe-card img,
+.category img {
     width: 100%;
     height: 200px;
     object-fit: cover;
@@ -108,7 +117,8 @@ h2 {
     margin-bottom: 10px;
 }
 
-.robe-card h3, .category h3 {
+.robe-card h3,
+.category h3 {
     margin-bottom: 10px;
 }
 
@@ -126,7 +136,225 @@ h2 {
     text-align: center;
 }
 
-/* Styles du footer */
+
+
+/* Début du carroussel */
+
+#toggleContainer label {
+    text-align: center;
+    width: 70px;
+}
+
+#container {
+    height: 60vh;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#toggleContainer {
+    height: 10vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 95vw;
+    position: absolute;
+    display: none;
+}
+
+#tilesContainer {
+    min-height: 90vh;
+    width: 100vw;
+    margin-top: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    align-content: center;
+}
+
+.tileItem {
+    width: 250px;
+    height: 250px;
+    margin: 5px;
+    border-radius: 5px;
+    background-size: cover; /* Ajoutez cette ligne */
+    transition: all 0.5s ease;
+}
+
+.tileItem:hover {
+    transform: scale(1.05);
+    transition: all 0.5s ease;
+}
+
+
+#galleryContainer {
+    height: 500px;
+    width: 800px;
+    background: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+}
+
+#toggle {
+    height: 10vh;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+#tilesView {
+    min-height: 100vh;
+    width: 100vw;
+    /* background: rgb(246,210,106);
+    background: linear-gradient(111deg, rgba(246,210,106,1) 0%, rgba(255,159,0,1) 52%, rgba(251,197,100,1) 100%); */
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#galleryView {
+    height: 50vh;
+    width: 100%;
+    /* background: rgb(246,210,106);
+    background: linear-gradient(111deg, rgba(246,210,106,1) 0%, rgba(255,159,0,1) 52%, rgba(251,197,100,1) 100%); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#outer3 {
+    width: 100px;
+    height: 40px;
+    background-color: white;
+    margin: 10px auto;
+    border-radius: 3px;
+    border: 2px solid white;
+    transition: all 0.5s;
+}
+
+#slider3 {
+    height: 36px;
+    width: 46px;
+    /* background-color: orange; */
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+
+#slider3.active {
+    -webkit-transform: translatex(50px);
+    -ms-transform: translatex(50px);
+    -o-transform: translatex(50px);
+    transform: translatex(50px);
+    transition: all 0.5s;
+    /* background-color: orange; */
+}
+
+#outer3.outerActive {
+    background-color: white;
+    border: 2px solid white;
+    transition: all 0.5s;
+}
+
+#mainView {
+    height: 450px;
+    width: 450px;
+    border-radius: 5px;
+    /* background-color: #eb9100; */
+    margin-left: 10px;
+    margin-right: 10px;
+    z-index: 1;
+    transition: all 1s;
+}
+
+#mainView:hover {
+    transform: scale(1.2);
+    transition: all 1s;
+}
+
+#leftView {
+    height: 400px;
+    width: 150px;
+    opacity: 0.5;
+    border-radius: 5px;
+    transform: skewy(5deg);
+    transform-origin: top right;
+    /* background-color: #eb9100; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s;
+}
+
+#leftView:hover {
+    opacity: 1;
+    transition: all 1s;
+}
+
+#rightView {
+    height: 400px;
+    width: 150px;
+    opacity: 0.5;
+    border-radius: 5px;
+    transform: skewy(-5deg);
+    transform-origin: top left;
+    /* background-color: #eb9100; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s;
+}
+
+#rightView:hover {
+    opacity: 1;
+    transition: all 1s;
+}
+
+.navBtns {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: none;
+    position: absolute;
+    opacity: 0.8;
+    background-color: transparent;
+    cursor: pointer;
+    color: white;
+}
+
+
+
+.navBtns:hover {
+    opacity: 1;
+    transition: all 1s;
+    /* background-color: #eb9100; */
+}
+
+#navLeft {
+    left: 50px;
+}
+
+#navRight {
+    right: 50px;
+}
+
+#linkTag {
+    cursor: pointer;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+/* Fin du carroussel */
+
+
+
+/* Début du footer */
 footer {
     position: fixed;
     bottom: 0;
@@ -136,6 +364,7 @@ footer {
     text-align: center;
     color: #fff;
     background: linear-gradient(to left, #373838, #8aaecc);
+    z-index: 4;
 }
 
 .gradient {
@@ -181,18 +410,24 @@ footer {
     color: #fff;
 }
 
+/* Fin du footer */
+
 /* Media Queries pour le responsive */
 @media screen and (max-width: 767px) {
-    #featured-robes, #categories {
+
+    #featured-robes,
+    #categories {
         grid-template-columns: 1fr;
         gap: 10px;
     }
 
-    .robe-card, .category {
+    .robe-card,
+    .category {
         padding: 10px;
     }
 
-    .robe-card img, .category img {
+    .robe-card img,
+    .category img {
         height: 150px;
     }
 

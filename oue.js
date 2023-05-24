@@ -37,10 +37,6 @@ let imgObject = [
   "carousel3.png",
   "carousel4.png",
   "carousel5.png",
-  // "robe2.jpg",
-  // "robe3.jpg",
-  // "robe4.jpg",
-  // "robe5.jpg",
 ];
 
 let mainImg = 0;
