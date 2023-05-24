@@ -1,0 +1,207 @@
+/* Styles globaux */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Styles du header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to left, #373838, #8aaecc);
+    padding: 20px;
+    color: #fff;
+    z-index: 999;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: linear-gradient(to left, #373838, #8aaecc);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    margin-bottom: 10px;
+}
+
+.dropdown-menu li:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Styles du contenu principal */
+main {
+    padding-top: 80px;
+    /* Pour éviter que le contenu ne soit masqué par le header fixe */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#featured-robes, #categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    margin-bottom: 40px;
+}
+
+.robe-card, .category {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    height: 400px; /* Ajoutez cette ligne pour définir la hauteur fixe */
+}
+
+
+.robe-card img, .category img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.robe-card h3, .category h3 {
+    margin-bottom: 10px;
+}
+
+.robe-card p {
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.robe-card .btn {
+    display: block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Styles du footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(to left, #373838, #8aaecc);
+}
+
+.gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, #373838, #8aaecc);
+    opacity: 0.8;
+    z-index: -1;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo-container {
+    margin-right: 20px;
+}
+
+.logo-container img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.footer-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.footer-links ul li {
+    margin-right: 20px;
+}
+
+.footer-links ul li a {
+    color: #fff;
+}
+
+/* Media Queries pour le responsive */
+@media screen and (max-width: 767px) {
+    #featured-robes, #categories {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .robe-card, .category {
+        padding: 10px;
+    }
+
+    .robe-card img, .category img {
+        height: 150px;
+    }
+
+    .logo-container img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .footer-links ul li {
+        margin-right: 10px;
+    }
+}
